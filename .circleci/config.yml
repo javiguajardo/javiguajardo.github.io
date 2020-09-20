@@ -2,23 +2,35 @@ version: 2
 jobs:
   build:
     docker:
-      - image: 'circleci/node:10'
+      - image: circleci/node:10
     filters:
       branches:
         only: master
+    working_directory: ~/personal-site
     steps:
       - checkout
-      - restore_cache: 
-        keys:
-          - 'v1-npm-deps-{{ checksum "package-lock.json" }}'
-          - v1-npm-deps-
+      - restore_cache:
+          keys:
+            - deps-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
+            - deps-{{ checksum "package.json" }}-
+            - deps-
+      - run:
+          name: Install dependencies
+          command: |
+            npm install --no-save
+      - save_cache:
+          key: deps-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Install dependencies
+          command: |
+            npm install --no-save
+      - run:
+          name: Set Git User
+          command: |
+            git config user.name "javiguajardo"
+            git config user.email "f.javi.guajardo@gmail.com"
       - run: 
-        name: Install dependencies
-        command: npm install
-      - save_cache: 
-        key: 'v1-npm-deps-{{ checksum "package-lock.json" }}'
-        paths:
-          - ./node_modules
-      - run: 
-        name: Gatsby Deploy
-        command: npm run deploy
+          name: Gatsby deploy
+          command: npm run deploy
