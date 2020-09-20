@@ -1,26 +1,27 @@
 version: 2
 jobs:
   build:
-    docker: 
-      -image: circleci/node:10
+    docker:
+      - image: circleci/node:10
     filters:
       branches:
         only: master
+    working_directory: ~/personal-site
     steps:
       - checkout
       - restore_cache:
-        keys:
-          # Find a cache corresponding to this specific package-lock.json
-          - v1-npm-deps-{{ checksum "package-lock.json" }}
-          # Fallback cache to be used
-          - v1-npm-deps-      
+          keys:
+            - deps-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
+            - deps-{{ checksum "package.json" }}-
+            - deps-
       - run:
-        name: Install dependencies
-        command: npm install
+          name: Install dependencies
+          command: |
+            npm install --no-save
       - save_cache:
-        key: v1-npm-deps-{{ checksum "package-lock.json" }}
-        paths:
-          - ./node_modules     
-      - run:
-        name: Gatsby Deploy
-        command: npm run deploy   
+          key: deps-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - run: 
+          name: Gatsby deploy
+          command: npm run deploy
