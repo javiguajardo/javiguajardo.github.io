@@ -22,10 +22,6 @@ jobs:
           key: deps-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
           paths:
             - node_modules
-      - run:
-          name: Install dependencies
-          command: |
-            npm install --no-save
 
   deploy:
     <<: *default-config
