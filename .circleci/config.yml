@@ -26,14 +26,6 @@ jobs:
           name: Install dependencies
           command: |
             npm install --no-save
-      - run:
-          name: Set Git User
-          command: |
-            git config user.name "javiguajardo"
-            git config user.email "f.javi.guajardo@gmail.com"
-      - run: 
-          name: Deploy to GH pages
-          command: npm run deploy
 
   deploy:
     <<: *default-config
