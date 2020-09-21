@@ -29,7 +29,9 @@ jobs:
             git config user.email "f.javi.guajardo@gmail.com"
       - run: 
           name: Deploy to GH pages
-          command: npm run deploy
+          command: |
+            git checkout develop
+            npm run deploy
 
 workflows:
   version: 2
