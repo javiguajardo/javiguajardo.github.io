@@ -22,10 +22,6 @@ jobs:
           key: deps-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
           paths:
             - node_modules
-
-  deploy:
-    <<: *default-config
-    steps:
       - run: 
           name: Deploy to GH pages
           command: npm run deploy
@@ -35,9 +31,6 @@ workflows:
   build-and-deploy:
     jobs:
       - build
-      - deploy:
-          requires:
-            - build
           filters:
             branches:
               only: develop        
