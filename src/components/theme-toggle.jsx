@@ -1,15 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { FaRegSun, FaRegMoon } from 'react-icons/fa';
 
 import { LIGHT } from '../config/theme';
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  
+  .sun-icon {
+    margin-right: 10px;
+  }
+  
+  .moon-icon {
+    margin-left: 10px;    
+  }
+`;
 
 const Checkbox = styled.input`
   visibility: hidden;
   width: 0;
   height: 0;
+  position: absolute;
   
-  &:checked + .toggle-label .toggle-circle {
+  &:checked + .toggle-circle {
     transform: translateX(3rem);
   }
 `;
@@ -37,12 +52,14 @@ const Circle = styled.span`
 const ThemeToggle = ({ theme, toggleTheme }) => {
   const isLightTheme = theme === LIGHT;
   return (
-    <>
-      <Checkbox type="checkbox" id="toggle-theme" onChange={toggleTheme} checked={!isLightTheme} />
+    <Container>
+      <FaRegSun className="sun-icon" size="2em" />
       <Label className="toggle-label" htmlFor="toggle-theme">
+        <Checkbox type="checkbox" id="toggle-theme" onChange={toggleTheme} checked={!isLightTheme} />
         <Circle className="toggle-circle" isLightTheme={isLightTheme} />
       </Label>
-    </>
+      <FaRegMoon className="moon-icon" size="2em" />
+    </Container>
   );
 };
 
