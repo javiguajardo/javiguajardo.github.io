@@ -26,12 +26,6 @@ jobs:
   deploy:
     <<: *default-config
     steps:
-      - run:
-          name: Set Git User
-          command: |
-            cd ~/personal-site
-            git config user.name "javiguajardo"
-            git config user.email "f.javi.guajardo@gmail.com"
       - run: 
           name: Deploy to GH pages
           command: npm run deploy
