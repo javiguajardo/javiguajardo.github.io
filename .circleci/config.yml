@@ -29,6 +29,7 @@ jobs:
       - run:
           name: Set Git User
           command: |
+            cd ~/personal-site
             git config user.name "javiguajardo"
             git config user.email "f.javi.guajardo@gmail.com"
       - run: 
