@@ -5,8 +5,12 @@ import { colorPrimaryOrange, devices } from '../styles/variables';
 
 const AboutContainer = styled.section`
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 50px 0 100px 0;
   max-width: 800px;
+  
+  @media ${devices.tablet} {
+    padding-top: 100px;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -15,7 +19,7 @@ const Paragraph = styled.p`
 `;
 
 const Name = styled.h1`
-  font-size: 5rem;
+  font-size: 4rem;
   color: ${colorPrimaryOrange};
   font-weight: 900;
   margin: 0;
@@ -27,7 +31,7 @@ const Name = styled.h1`
 `;
 
 const Position = styled.h2`
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   margin: 0;
   line-height: 1.1;
