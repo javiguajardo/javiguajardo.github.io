@@ -15,7 +15,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    padding: 20px;
+    font-family: Poppins, sans-serif;
+    margin: 0;
   }
 `;
 

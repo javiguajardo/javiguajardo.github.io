@@ -1,15 +1,22 @@
+import {
+  colorWhite,
+  colorLightGray,
+  colorPrimaryOrange,
+  colorDarkBlue
+} from '../styles/variables';
+
 const lightTheme = {
-  body: '#fff',
-  text: '#606060',
-  toggleFill: '#F21905',
-  toggleBtn: '#fff'
+  body: colorWhite,
+  text: colorLightGray,
+  toggleFill: colorPrimaryOrange,
+  toggleBtn: colorWhite
 };
 
 const darkTheme = {
-  body: '#000020',
-  text: '#fff',
-  toggleFill: '#fff',
-  toggleBtn: '#F21905'
+  body: colorDarkBlue,
+  text: colorWhite,
+  toggleFill: colorWhite,
+  toggleBtn: colorPrimaryOrange
 };
 
 const LIGHT = 'light';

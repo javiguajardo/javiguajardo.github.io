@@ -1,9 +1,6 @@
 import React from "react"
 import { ThemeProvider } from 'styled-components';
-
-import GlobalStyles from '../components/global-styles';
-import Header from '../components/header';
-import ThemeToggle from '../components/theme-toggle';
+import { GlobalStyles, Header, ThemeToggle, Main, About, Footer, Layout } from '../components';
 import { lightTheme, darkTheme, LIGHT } from '../config/theme';
 import useSelectedTheme from '../hooks/useSelectedTheme';
 
@@ -20,10 +17,15 @@ export default function Home() {
     <ThemeProvider theme={themeMode}>
       <>
         <GlobalStyles />
-        <Header>
-          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-        </Header>
-        <h1>Theme!</h1>
+        <Layout>
+          <Header>
+            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+          </Header>
+          <Main>
+            <About />
+          </Main>
+          <Footer />
+        </Layout>
       </>
     </ThemeProvider>
   );
