@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { colorPrimaryOrange, devices } from '../styles/variables';
+import { colorLightOrange, devices } from '../styles/variables';
 
 const AboutContainer = styled.section`
   margin: 0 auto;
@@ -20,7 +20,7 @@ const Paragraph = styled.p`
 
 const Name = styled.h1`
   font-size: 4rem;
-  color: ${colorPrimaryOrange};
+  color: ${({ theme }) => theme.primaryColor};
   font-weight: 900;
   margin: 0;
   line-height: 1.1;
@@ -42,7 +42,7 @@ const Position = styled.h2`
 `;
 
 const Link = styled.a`
-  color: ${colorPrimaryOrange};
+  color: ${({ theme }) => theme.primaryColor};
 `;
 
 const About = () => (
