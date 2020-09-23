@@ -1,22 +1,25 @@
 import {
   colorWhite,
   colorLightGray,
-  colorPrimaryOrange,
+  colorLightOrange,
+  colorDarkOrange,
   colorDarkBlue
 } from '../styles/variables';
 
 const lightTheme = {
   body: colorWhite,
   text: colorLightGray,
-  toggleFill: colorPrimaryOrange,
+  primaryColor: colorDarkOrange,
+  toggleFill: colorDarkOrange,
   toggleBtn: colorWhite
 };
 
 const darkTheme = {
   body: colorDarkBlue,
   text: colorWhite,
+  primaryColor: colorLightOrange,
   toggleFill: colorWhite,
-  toggleBtn: colorPrimaryOrange
+  toggleBtn: colorLightOrange
 };
 
 const LIGHT = 'light';

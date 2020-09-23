@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaLinkedin, FaGithub, FaRegEnvelope } from 'react-icons/fa';
 
-import { colorPrimaryOrange } from '../styles/variables';
+import { colorLightOrange } from '../styles/variables';
 
 const FooterContainer = styled.footer`
   position: absolute;
@@ -14,7 +14,7 @@ const FooterContainer = styled.footer`
   
   a {
     padding: 0 10px;
-    color: ${colorPrimaryOrange}
+    color: ${({ theme }) => theme.primaryColor};
   }
 `;
 
