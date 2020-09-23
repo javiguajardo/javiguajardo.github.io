@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaLinkedin, FaGithub, FaRegEnvelope } from 'react-icons/fa';
 
-import { colorLightOrange } from '../styles/variables';
-
 const FooterContainer = styled.footer`
   position: absolute;
   bottom: 0;

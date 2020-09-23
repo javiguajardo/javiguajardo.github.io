@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { colorLightOrange, devices } from '../styles/variables';
+import { devices } from '../styles';
 
 const AboutContainer = styled.section`
   margin: 0 auto;
