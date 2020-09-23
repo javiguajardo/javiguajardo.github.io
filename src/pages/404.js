@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { Layout } from '../components';
+import { Layout, SEO } from '../components';
 import { colorWhite, devices } from '../styles';
 
 const Container = styled.main`
@@ -39,6 +39,7 @@ const Paragraph = styled.p`
 
 const NotFound = () => (
   <Layout>
+    <SEO title="Page Not Found"/>
     <Container>
       <Paragraph>
         Oops! Looks like

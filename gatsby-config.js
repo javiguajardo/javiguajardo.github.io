@@ -5,7 +5,11 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'Javi Guajardo',
+    description: "Javi Guajardo's personal site.",
+    author: 'Javi Guajardo',
+  },
   plugins: [
     'gatsby-plugin-styled-components',
     {
@@ -44,6 +48,7 @@ module.exports = {
         icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     }, 
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
+    'gatsby-plugin-react-helmet',
   ],
 }
